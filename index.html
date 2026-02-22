@@ -4,8 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    *{
+         font-family: "Geist", sans-serif;
+    }
+</style>
 </head>
-<body>
-    
+<body class="bg-base-200">
+    <header class="w-10/12  mx-auto  border-b-2 border-gray-200 mb-5 ">
+        <h2 class="font-bold text-[32px] mb-5">Job Application Tracker</h2>
+        <div class="flex items-center justify-between mb-5 ">
+            <div class="bg-white w-[400px] h-18 rounded-lg p-3">
+                <p class="font-medium text-[14px]">Total</p>
+                <h2 id="totaljob" class="font-bold text-[24px]">0</h2>
+            </div>
+            <div class="bg-white w-[400px] h-18 rounded-lg p-3">
+                <p class="font-medium text-[14px]">Interview</p>
+                <h2 class="font-bold text-[24px] text-green-500">0</h2>
+            </div>
+            <div class="bg-white w-[400px] h-18 rounded-lg p-3">
+                <p class="font-medium text-[14px]">Rejected</p>
+                <h2 class="font-bold text-[24px] text-red-500">0</h2>
+            </div>
+        </div>
+    </header>
+
+    <!-- availble job section -->
+    <section class="w-10/12 mx-auto flex justify-between items-center space-y-5">
+        <h3 class="font-semibold text-[20px] ">Available Jobs</h3>
+        <p class="font-medium text-[16px] text-[#64748B]"><span class="jobnum ">0</span> jobs</p>
+
+       
+    </section>
+     <!-- buttons section -->
+    <section class="buttons w-10/12 mx-auto space-x-2">
+            <button id="all" class="btn bg-white text-[#64748B]">All</button>
+            <button  id="interview" class="btn bg-white text-[#64748B]">Interview</button>
+            <button id="rejected" class="btn bg-white text-[#64748B]">Rejected</button>
+    </section>
+
+ <!-- main functionality -->
+    <section class=" w-10/12 mx-auto  min-h-96 pb-2">
+
+        <!-- all-job section -->
+         <section id="all-jobs"  >
+           <div class="   mx-auto m-5   bg-white space-y-3 p-6  relative rounded-sm ">
+            <h3 class="font-bold text-[22px]">Mobile First Corp</h3>
+            <p class="text-[#64748B]">React Native Developer</p>
+            <p class="text-[#64748B]">Remote • Full-time • $130,000 - $175,000</p>
+            <button class="btn  bg-primary/20">Not Applied</button>           
+            <p class="text-gray-600">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+            <div class="flex gap-3"><button class="btn text-green-500 bg-transparent border-green-500 ">interview</button>
+            <button class="btn text-red-500 bg-transparent border-red-500">Rejected</button></div>
+            <div class="dlticon border-gray-300  border-2  rounded-full w-10 h-10 flex justify-center items-center text-gray-400 absolute top-4 right-4"><i class="fa-solid fa-trash "></i></div>
+           </div>
+
+           <div class="  mx-auto m-5   bg-white space-y-3 p-6  relative rounded-sm">
+            <h3 class="font-bold text-[22px]">WebFlow Agency</h3>
+            <p class="text-[#64748B]">Web Designer & Developer</p>
+            <p class="text-[#64748B]">Los Angeles, CA •Part-time • $80,000 - $120,000</p>
+            <button class="btn  bg-primary/20">Not Applied</button>           
+            <p class="text-gray-600">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+            <div class="flex gap-3"><button class="btn text-green-500 bg-transparent border-green-500 ">interview</button>
+            <button class="btn text-red-500 bg-transparent border-red-500">Rejected</button></div>
+              <div class="dlticon border-gray-300  border-2  rounded-full w-10 h-10 flex justify-center items-center text-gray-400 absolute top-4 right-4"><i class="fa-solid fa-trash "></i></div>
+           </div>
+
+            <div class="  mx-auto m-5   bg-white space-y-3 p-6 relative rounded-sm ">
+            <h3 class="font-bold text-[22px]">DataViz Solutions</h3>
+            <p class="text-[#64748B]">Data Visualization Specialist</p>
+            <p class="text-[#64748B]">Boston, MA • Full-time • $125,000 - $165,000</p>
+            <button class="btn  bg-primary/20">Not Applied</button>           
+            <p class="text-gray-600">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+            <div class="flex gap-3"><button class="btn text-green-500 bg-transparent border-green-500 ">interview</button>
+            <button class="btn text-red-500 bg-transparent border-red-500">Rejected</button></div>
+              <div class="dlticon border-gray-300  border-2  rounded-full w-10 h-10 flex justify-center items-center text-gray-400 absolute top-4 right-4"><i class="fa-solid fa-trash "></i></div>
+           </div>
+
+            
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div  id="interview-jobs" class=" flex flex-col  justify-center items-center p-10  bg-white  shadow rounded-lg hidden">
+            <img src="./jobs.png" alt="">
+            <h2 class="font-semibold text-[24px]">No jobs available</h2>
+            <p class="font-normal text-[16px] text-[#64748B]">Check back soon for new job opportunities</p>
+        </div>
+
+
+        <div  id="rejected-jobs" class=" flex flex-col  justify-center items-center p-10  bg-white  shadow rounded-lg hidden ">
+            <img src="./jobs.png" alt="">
+            <h2 class="font-semibold text-[24px]">No jobs available</h2>
+            <p class="font-normal text-[16px] text-[#64748B]">Check back soon for new job opportunities</p>
+        </div>
+    </section>
+
+<script src="./script/alljob.js"></script>
+
 </body>
 </html>

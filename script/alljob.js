@@ -13,27 +13,36 @@ const allbtns=document.getElementsByClassName("btn");
  const rejectedparent=document.getElementById("rejected-parent");
  const rejectedjob=document.getElementById("rejected-jobs");
 
-
 let flag1=true;
 let flag2=true;
+
 for(let b of allbtns)
 {
 
     if(b.innerText=="Interview")
     {
+         
+       
+        
         b.addEventListener("click",function (){
-          
-            // button pop up
+        
+
            const parent=  b.parentElement;
-           const grandpa=parent.parentElement;
-           
+         const grandpa=parent.parentElement;
           const childelement= grandpa.getElementsByTagName("button")[0];
           
-          childelement.textContent="Interview";
+         
+              // button pop up
+           
+           if(grandpa.classList.contains("interviewed")==false)
+           {
+             childelement.textContent="Interview";
           childelement.style.backgroundColor="rgba(72, 187, 120, 0.5)";
           childelement.style.color="green";
           childelement.style.borderColor="green";
           childelement.style.fontWeight="bold";
+
+          
 
 
           // interview field addition
@@ -50,23 +59,38 @@ for(let b of allbtns)
          interparent.appendChild(clone);
           interCount.textContent=interparent.children.length;
 
+         
+       
+         
+           //status maintain
 
+          grandpa.classList.add("interviewed");
+          grandpa.classList.remove("reject");
+          
 
+           }
+          
+         
         });
     }
+    
     if(b.innerText =="Rejected")
     {
        
-    
+         
         b.addEventListener("click",function (){
-          
-            // button pop up
-           const par=  b.parentElement;
+             const par=  b.parentElement;
            const grandpaa=par.parentElement;
            
           const childele= grandpaa.getElementsByTagName("button")[0];
           
-          childele.textContent="Rejected";
+            // button pop up
+          
+          
+           if(grandpaa.classList.contains("reject")==false)
+           
+           {
+            childele.textContent="Rejected";
           childele.style.backgroundColor="rgba(220, 38, 38, 0.1)";
           childele.style.color="red";
           childele.style.borderColor="red";
@@ -87,7 +111,12 @@ for(let b of allbtns)
          rejectedparent.appendChild(clon);
           rejectCount.textContent=rejectedparent.children.length;
 
+          //status 
 
+          grandpaa.classList.add("reject");
+          grandpaa.classList.remove("interviewed");
+          
+           }
 
         });
     }
@@ -136,8 +165,8 @@ interviewbtn.addEventListener("click",function (){
 
      interviewbtn.style.backgroundColor="#007bff";
     interviewbtn.style.color="white";
-    allbtn.style.backgroundColor="";
-    allbtn.style.color="";
+    allbtn.style.backgroundColor="white";
+    allbtn.style.color="#64748B";
     rejectedbtn.style.backgroundColor="";
     rejectedbtn.style.color="";
 
@@ -163,6 +192,24 @@ interviewbtn.addEventListener("click",function (){
    avinterjob.textContent=interparent.children.length;
 
     }
+    ///eij eta korsi akhn
+    const interviewSecChildren=interparent.children;
+    for(let i of interviewSecChildren)
+    {
+        const redbtn=i.getElementsByTagName("div")[0].getElementsByTagName("button")[1];
+        
+
+        redbtn.addEventListener("click",function()
+    {
+        if(rejectedparent.children.length !=0){
+        if(   rejectedparent.children[0].tagName=="SECTION")
+        {
+            rejectedparent.removeChild(rejectedparent.children[0])
+        }
+    }
+        rejectedparent.appendChild(redbtn.parentElement.parentElement)
+    })
+    }
 
 })
 
@@ -175,8 +222,8 @@ rejectedbtn.addEventListener("click",function (){
 
      rejectedbtn.style.backgroundColor="#007bff";
     rejectedbtn.style.color="white";
-    allbtn.style.backgroundColor="";
-    allbtn.style.color="";
+    allbtn.style.backgroundColor="white";
+    allbtn.style.color="#64748B";
     interviewbtn.style.backgroundColor="";
     interviewbtn.style.color="";
    
@@ -198,6 +245,28 @@ rejectedbtn.addEventListener("click",function (){
    avrejectjob.textContent=rejectedparent.children.length;
 
     }
+    //////
+     const rejectSecChildren=rejectedparent.children;
+    for(let i of rejectSecChildren)
+    {
+        const greenbtn=i.getElementsByTagName("div")[0].getElementsByTagName("button")[0];
+        
+
+        greenbtn.addEventListener("click",function()
+    {
+        if(interparent.children.length !=0){
+        if(interparent.children[0].tagName=="SECTION")
+        {
+            interparent.removeChild(interparent.children[0])
+        }
+    }
+        interparent.appendChild(greenbtn.parentElement.parentElement)
+    })
+    }
 })
+
+
+
+
 
 

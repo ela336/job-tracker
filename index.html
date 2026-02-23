@@ -17,7 +17,7 @@
     }
 </style>
 </head>
-<body class="bg-base-200">
+<body class="bg-base-200 pt-5">
     <header class="w-10/12  mx-auto  border-b-2 border-gray-200 mb-5 ">
         <h2 class="font-bold text-[32px] mb-5">Job Application Tracker</h2>
         <div class="flex items-center justify-between mb-5 ">
@@ -62,7 +62,7 @@
 
      <!-- buttons section -->
     <section class="buttons w-10/12 mx-auto space-x-2">
-            <button id="all" class="btn bg-white text-[#64748B]">All</button>
+            <button id="all" class="btn bg-[#007bff] text-white">All</button>
             <button  id="interview" class="btn bg-white text-[#64748B]">INTERVIEW</button>
             <button id="rejected" class="btn bg-white text-[#64748B]">REJECTED</button>
     </section>
@@ -188,20 +188,20 @@
 
 
        <section id="interview-parent" class="hidden">
-         <div  id="interview-jobs" class=" flex flex-col  justify-center items-center p-10  bg-white  shadow rounded-lg mt-5 ">
+         <section  id="interview-jobs" class=" flex flex-col  justify-center items-center p-10  bg-white  shadow rounded-lg mt-5 ">
             <img src="./jobs.png" alt="">
             <h2 class="font-semibold text-[24px]">No jobs available</h2>
             <p class="font-normal text-[16px] text-[#64748B]">Check back soon for new job opportunities</p>
-        </div>
+         </section>
        </section>
 
 
         <section id="rejected-parent" class="hidden">
-            <div  id="rejected-jobs" class=" flex flex-col  justify-center items-center p-10  bg-white  shadow rounded-lg mt-5  ">
+            <section  id="rejected-jobs" class=" flex flex-col  justify-center items-center p-10  bg-white  shadow rounded-lg mt-5  ">
             <img src="./jobs.png" alt="">
             <h2 class="font-semibold text-[24px]">No jobs available</h2>
             <p class="font-normal text-[16px] text-[#64748B]">Check back soon for new job opportunities</p>
-        </div>
+            </section>
         </section>
     </section>
 

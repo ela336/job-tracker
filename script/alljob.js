@@ -132,6 +132,112 @@ for(let t of totalJobs){
 }
 
 
+let allsectionjobcart=parent.children;
+for(let i of allsectionjobcart)
+{
+    let allsecgreenbtn=i.getElementsByTagName("div")[0].getElementsByTagName("button")[0];
+     let allsecredbtn=i.getElementsByTagName("div")[0].getElementsByTagName("button")[1];
+
+    //green btn
+      allsecgreenbtn.addEventListener("click",function()
+{
+           
+     let v=rejectedparent.children[0].tagName;
+     if(rejectedparent.children.length ==1 && v == "SECTION"){
+       
+        
+        
+        
+           
+               rejectCount.textContent="0";
+        
+    }
+    else{
+            rejectCount.textContent=rejectedparent.children.length;
+            interCount.textContent=interparent.children.length;
+    }
+
+
+
+
+           
+
+   let allpar=  allsecgreenbtn.parentElement.parentElement;
+   
+   
+   let t=allpar.getElementsByTagName("h3")[0].innerText;
+   
+    let cmparr=rejectedparent.children; //here
+
+   
+    for(let j of cmparr)
+    {
+        
+        if(t==j.getElementsByTagName("h3")[0].innerText)
+        {
+            console.log("yes");
+
+           rejectedparent.removeChild(j);
+            rejectCount.textContent=rejectedparent.children.length;
+            interCount.textContent=interparent.children.length;
+        }
+       
+    }
+   
+})
+
+
+
+
+
+     //red btn
+    allsecredbtn.addEventListener("click",function()
+{
+    //remove kora lagte pare//
+     let u=interparent.children[0].tagName;
+     if(interparent.children.length ==1 && u == "SECTION"){
+       
+        
+        
+        
+           
+               interCount.textContent="0";
+        
+    }
+    else{
+            rejectCount.textContent=rejectedparent.children.length;
+            interCount.textContent=interparent.children.length;
+    }
+
+
+
+
+
+   let allparent=  allsecredbtn.parentElement.parentElement;
+   
+   
+   let text=allparent.getElementsByTagName("h3")[0].innerText;
+   
+    let cmparray=interparent.children;
+
+   
+    for(let j of cmparray)
+    {
+        
+        if(text==j.getElementsByTagName("h3")[0].innerText)
+        {
+            console.log("yes");
+
+           interparent.removeChild(j);
+            rejectCount.textContent=rejectedparent.children.length;
+            interCount.textContent=interparent.children.length;
+        }
+       
+    }
+   
+})
+    
+}
 
 
 
@@ -190,9 +296,12 @@ interviewbtn.addEventListener("click",function (){
     {
     
    avinterjob.textContent=interparent.children.length;
+   
+    rejectCount.textContent=rejectedparent.children.length;
+      interCount.textContent=interparent.children.length;
 
     }
-    ///eij eta korsi akhn
+    
     const interviewSecChildren=interparent.children;
     for(let i of interviewSecChildren)
     {
@@ -207,7 +316,11 @@ interviewbtn.addEventListener("click",function (){
             rejectedparent.removeChild(rejectedparent.children[0])
         }
     }
-        rejectedparent.appendChild(redbtn.parentElement.parentElement)
+        rejectedparent.appendChild(redbtn.parentElement.parentElement);
+
+        //numbers updated
+        interCount.textContent=interparent.children.length;
+         avinterjob.textContent=interparent.children.length;
     })
     }
 
@@ -243,9 +356,12 @@ rejectedbtn.addEventListener("click",function (){
     {
     
    avrejectjob.textContent=rejectedparent.children.length;
+   
+    rejectCount.textContent=rejectedparent.children.length;
+     interCount.textContent=interparent.children.length;
 
     }
-    //////
+    
      const rejectSecChildren=rejectedparent.children;
     for(let i of rejectSecChildren)
     {
@@ -260,7 +376,11 @@ rejectedbtn.addEventListener("click",function (){
             interparent.removeChild(interparent.children[0])
         }
     }
-        interparent.appendChild(greenbtn.parentElement.parentElement)
+        interparent.appendChild(greenbtn.parentElement.parentElement);
+
+        //numbers updated
+        avrejectjob.textContent=rejectedparent.children.length;
+         rejectCount.textContent=rejectedparent.children.length;
     })
     }
 })

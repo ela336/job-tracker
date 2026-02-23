@@ -322,7 +322,9 @@ interviewbtn.addEventListener("click",function (){
     
    avinterjob.textContent=interparent.children.length;
    
-    rejectCount.textContent=rejectedparent.children.length;
+       if(rejectedparent.children !=0 && rejectedparent.children[0].tagName !="SECTION")
+        {  rejectCount.textContent=rejectedparent.children.length;
+        }
       interCount.textContent=interparent.children.length;
 
     }

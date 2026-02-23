@@ -396,7 +396,10 @@ rejectedbtn.addEventListener("click",function (){
    avrejectjob.textContent=rejectedparent.children.length;
    
     rejectCount.textContent=rejectedparent.children.length;
-     interCount.textContent=interparent.children.length;
+     if(interparent.children !=0 && interparent.children[0].tagName !="SECTION")
+     {
+           interCount.textContent=interparent.children.length;
+     }
 
     }
     

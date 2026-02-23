@@ -131,22 +131,34 @@ for(let t of totalJobs){
     t.textContent=parent.children.length;
 }
 
-
+//here
 let allsectionjobcart=parent.children;
 for(let i of allsectionjobcart)
 {
     let allsecgreenbtn=i.getElementsByTagName("div")[0].getElementsByTagName("button")[0];
      let allsecredbtn=i.getElementsByTagName("div")[0].getElementsByTagName("button")[1];
+     let alldltbtn=i.getElementsByTagName("div")[1];
+     //dltbtn
+     alldltbtn.addEventListener("click",function()
+    {
+        let dltgparent=alldltbtn.parentElement.parentElement;
+        dltgparent.removeChild(alldltbtn.parentElement);
+        //here too
+        for(let t of totalJobs){
+    t.textContent=parent.children.length;
+}
+
+
+    })
+     
+
 
     //green btn
       allsecgreenbtn.addEventListener("click",function()
 {
            
      let v=rejectedparent.children[0].tagName;
-     if(rejectedparent.children.length ==1 && v == "SECTION"){
-       
-        
-        
+     if(rejectedparent.children.length ==1 && v == "SECTION"){   
         
            
                rejectCount.textContent="0";
@@ -193,7 +205,7 @@ for(let i of allsectionjobcart)
      //red btn
     allsecredbtn.addEventListener("click",function()
 {
-    //remove kora lagte pare//
+    
      let u=interparent.children[0].tagName;
      if(interparent.children.length ==1 && u == "SECTION"){
        
@@ -267,6 +279,19 @@ allbtn.addEventListener("click",function (){
 
 
 interviewbtn.addEventListener("click",function (){
+
+    if(interparent.children.length==1 && interparent.children[0].tagName !="SECTION")
+    {
+        let dlticon=interparent.getElementsByClassName("dlticon")[0];
+        dlticon.addEventListener("click",function()
+    {
+        dlticon.parentElement.parentElement.removeChild(dlticon.parentElement);
+        avinterjob.textContent=interparent.children.length;
+   
+    
+      interCount.textContent=interparent.children.length;
+    })
+    }
     
 
      interviewbtn.style.backgroundColor="#007bff";
@@ -331,7 +356,18 @@ interviewbtn.addEventListener("click",function (){
 
 
 rejectedbtn.addEventListener("click",function (){
-     console.log("rejected");
+      if(rejectedparent.children.length==1 && rejectedparent.children[0].tagName !="SECTION")
+    {
+        let dlt=rejectedparent.getElementsByClassName("dlticon")[0];
+        dlt.addEventListener("click",function()
+    {
+        dlt.parentElement.parentElement.removeChild(dlt.parentElement);
+        avrejectjob.textContent=rejectedparent.children.length;
+   
+    
+      rejectCount.textContent=rejectedparent.children.length;
+    })
+    }
 
      rejectedbtn.style.backgroundColor="#007bff";
     rejectedbtn.style.color="white";
